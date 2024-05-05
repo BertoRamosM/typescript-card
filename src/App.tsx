@@ -34,7 +34,9 @@ function App() {
     getProducts
   );
 
-  const getTotalItems = (items: CartItemType[]) => null;
+  const getTotalItems = (items: CartItemType[]) =>{
+    return items.reduce((acc: number, items) => acc  + items.amount, 0)
+  };
 
   const handleAddToCart = (clickedItem: CartItemType) => null;
 
