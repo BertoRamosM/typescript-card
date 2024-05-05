@@ -23,6 +23,5 @@ div{
   font-family: Arial, Helvatica, sans-serif;
   padding: 1rem;
   height: 100%;
-
 }
 `
