@@ -8,6 +8,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import Badge from '@material-ui/core/badge'
 
 import { Wrapper } from "./App.styles";
+import Item from "./components/Item";
 
 export type CartItemType = {
   id: number;
@@ -28,11 +29,27 @@ const getProducts = async (): Promise<CartItemType[]> => {
 function App() {
   const {data, isLoading, error} = useQuery<CartItemType[]>('products', getProducts)
 
-  const getTota
+  const getTotalItems = () => null
 
+  const handleAddToCart = (clickedItem: CartItemType) => null
+
+  const handleRemoveFromCart = () => null
+
+
+  if (isLoading) return <LinearProgress />
+  if (error) return <div>Something went wrong ...</div>
+  
   return (
     <>
-      <h1>Cart</h1>
+      <Wrapper>
+        <Grid container spacing={3}>
+          {
+            data?.map(item => (
+              
+            ))
+          }
+        </Grid>
+      </Wrapper>
     </>
   )
 }
