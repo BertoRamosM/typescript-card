@@ -19,12 +19,29 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
         <div className="information">
           <p>Price: $ {item.price}</p>
           <p>Total: $ {(item.amount * item.price).toFixed(2)}</p>
-          <button onClick={() => addToCart(item.)}></button>
-          </div>
+          <Button
+            className="buttons"
+            size="small"
+            disableElevation
+            variant="contained"
+            onClick={() => removeFromCart(item.id)}
+          >
+            -
+          </Button>
+          <p>{item.amount}</p>
+          <Button
+            className="buttons"
+            size="small"
+            disableElevation
+            variant="contained"
+            onClick={() => addToCart(item)}
+          >
+            +
+          </Button>
+        </div>
       </div>
     </Wrapper>
-    
-  )
+  );
 }
 
 export default CartItem
