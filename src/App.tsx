@@ -63,7 +63,6 @@ function App() {
             return [...acc, { ...item, amount: item.amount - 1 }];
           }
         } else {
-          // Keep other items unchanged
           return [...acc, item];
         }
       }, [] as CartItemType[])
