@@ -6,6 +6,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/badge";
+import Cart from "./components/Cart";
 
 import { StyledButton, Wrapper } from "./App.styles";
 import Item from "./components/Item";
@@ -49,7 +50,9 @@ function App() {
     <>
       <Wrapper>
         <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-          Cart goes here
+          <Cart cartItems={cartItems}
+            addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}/>
         </Drawer>
         <StyledButton onClick={() => setCartOpen(true)}>
           <Badge badgeContent={getTotalItems(cartItems)} color='error'>
